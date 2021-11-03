@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-import { CounterMutation } from '../Mutations/counterMutation';
+import { CounterMutation, ViewMutation, PostsMutation } from '../Mutations/counterMutation';
 import TodoMutations from '../Mutations/todosMutation';
 
 export const typeDefs = gql`
@@ -10,6 +10,8 @@ export const typeDefs = gql`
 
 export const resolvers = {
   Mutation: {
+    ...PostsMutation,
+    ...ViewMutation,
     ...CounterMutation,
     ...TodoMutations,
   }

@@ -4,7 +4,7 @@ import client from './GraphQL/config'
 import Couter from './Counter/Couter';
 import CouterWithoutButtons from './CounterWithoutButtons/CouterWithoutButtons';
 import NewCounterPage from './NewCounterPage/NewCounterPage'
-import Todos from './Todos/Todos';
+import FetchDataPage from './FetchDataPage/FetchDataPage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,6 +22,7 @@ function App() {
           <div className='sidebar'>
             <Link to="/counter"><li>Counter</li></Link>
             <Link to="/counterpage"><li>NewCounterPage</li></Link>
+            <Link to="/fetchdata"><li>FetchDataPage</li></Link>
           </div>
 
           <div className='content'>
@@ -32,6 +33,9 @@ function App() {
               </Route>
               <Route path="/counterpage">
                 <NewCounterPage />
+              </Route>
+              <Route path="/fetchdata">
+                <FetchDataPage />
               </Route>
             </Switch>
           </div>
